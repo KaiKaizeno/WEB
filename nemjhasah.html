@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #764ba2;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #container {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .box {
+            background-color: black;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        .button-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            width: 150px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        button:first-of-type {
+            background-color: black;
+            color: white;
+        }
+
+        button:first-of-type:active {
+            transform: translateY(0);
+        }
+
+        button:last-of-type {
+            background: #fd0101;
+            color: white;
+        }
+
+        button:last-of-type:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <div>
+        <button onclick="addElement()">+</button>
+        <button onclick="removeElement()">-</button>
+    </div>
+    <script>
+        function addElement() {
+            const newElement = document.createElement('div');
+            newElement.innerText = "Snu jaalaa";
+            newElement.classList.add("box");
+            newElement.id = "12";
+            document.getElementById("container").appendChild(newElement);
+        }
+
+        function removeElement() {
+            const oldElement = document.getElementById("12");
+            oldElement.remove();
+        }
+    </script>
+</body>
+</html>
