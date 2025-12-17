@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golomt Clone — Company Homepage</title>
+    <link rel="stylesheet" href="test.css" />
+<style>
+    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.header {
+    background: #0051ba;
+    color: white;
+    padding: 1em 0;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.nav a {
+    color: white;
+    margin-left: 1em;
+    text-decoration: none;
+    font-weight: bold;
+}
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    background: #f2f2f2;
+    padding: 2em 0;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 2.5em;
+}
+.hero .btn {
+    display: inline-block;
+    margin-top: 1em;
+    background: #0051ba;
+    color: white;
+    padding: 0.75em 1.5em;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em 0;
+}
+.feature {
+    flex: 1;
+    padding: 1em;
+    margin: 0 0.5em;
+    background: #e7e7e7;
+    border-radius: 5px;
+}
+
+
+.news h2 {
+    margin-bottom: 1em;
+    text-align: center;
+}
+.news-list {
+    display: flex;
+    gap: 1em;
+}
+.news-item {
+    flex: 1;
+    background: #fafafa;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+.footer {
+    text-align: center;
+    padding: 1em 0;
+    background: #222;
+    color: white;
+}
+
+.hero {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+    padding: 2em;
+    border-radius: 10px;
+}
+
+.feature img {
+    width: 60px;
+    margin-bottom: 1em;
+}
+
+.news-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+
+.logo img {
+    height: 45px;
+    width: auto;
+    cursor: pointer;
+}
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+
+}
+
+</style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-container">
+        <div class="logo">
+            <img src="https://unetsecurities.mn/wp-content/uploads/2024/11/GolomtBank.png" alt="Company Logo">
+        </div>
+
+        <nav class="nav">
+            <a href="#">Нүүр</a>
+            <a href="#">Бидний тухай</a>
+            <a href="#">Үйлчилгээ</a>
+            <a href="#">Мэдээ</a>
+            <a href="#">Холбоо барих</a>
+        </nav>
+    </div>
+</header>
+
+
+<section class="hero">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXan84O3PbakIAP2yddDdZopbtWMm3dn8xQw&s" alt="Bank banner" class="hero-img">
+    <div class="hero-content">
+        <h1>Сайн сайхныг санхүүжүүлнэ</h1>
+        <p>Таны найдвартай санхүүгийн түнш</p>
+        <a href="#" class="btn">Дэлгэрэнгүй</a>
+    </div>
+</section>
+
+
+<section class="features container">
+    <div class="feature">
+        <img src="https://frontier.bank/assets/files/hPMA2LeB/1.png" alt="Service 1">
+        <h3>Хувийн банк</h3>
+        <p>Хадгаламж, зээл, картын үйлчилгээ.</p>
+    </div>
+
+    <div class="feature">
+        <img src="https://static.pw.live/5eb393ee95fab7468a79d189/GLOBAL_CMS/55ed22e2-3ee5-41be-b657-c4c7f7153756.webp" alt="Service 2">
+        <h3>Бизнес банк</h3>
+        <p>ЖДҮ болон байгууллагын шийдлүүд.</p>
+    </div>
+
+    <div class="feature">
+        <img src="https://b2161880.smushcdn.com/2161880/wp-content/uploads/2017/05/Fotolia_116981296_Subscription_Monthly_M.jpg?lossy=1&strip=1&webp=1" alt="Service 3">
+        <h3>Дижитал банк</h3>
+        <p>Онлайн болон мобайл банк.</p>
+    </div>
+</section>
+
+
+<section class="news container">
+    <h2>Сүүлийн мэдээ</h2>
+
+    <div class="news-list">
+        <div class="news-item">
+            <img src="https://www.golomtbank.com/wp-content/uploads/2025/12/Volleyball-407x220.jpg" alt="News 1">
+            <h4>Самурай бонд амжилттай гаргав</h4>
+            <p>Олон улсын зах зээлд амжилттай...</p>
+        </div>
+
+        <div class="news-item">
+            <img src="https://www.golomtbank.com/wp-content/uploads/2025/12/%D0%93%D0%BE%D0%BB%D0%BE%D0%BC%D1%82-Toc-banner-MN-407x220.jpg" alt="News 2">
+            <h4>Картын шинэчлэлт</h4>
+            <p>Шинэ загвар, илүү аюулгүй.</p>
+        </div>
+
+        <div class="news-item">
+            <img src="https://www.golomtbank.com/wp-content/uploads/2025/12/%D0%93%D0%BE%D0%BB%D0%BE%D0%BC%D1%82-%D0%BD%D2%AF%D2%AF%D1%80-%D0%B7%D1%83%D1%80%D0%B0%D0%B3-407x220.jpg" alt="News 3">
+            <h4>Ажлын байр</h4>
+            <p>Шинэ ажлын байр зарлагдлаа.</p>
+        </div>
+    </div>
+</section>
+
+
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 Fake Golomt bank.</p>
+        <p>Утас: +976 80191219 | Имэйл: nest21281016@nhs.edu.mn</p>
+    </div>
+</footer>
+
+</body>
+</html>
