@@ -1,103 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Messenger</title>
-    <style>
-        body {
-            margin: 0;
-            background: #f0f2f5;
-            font-family: Arial, sans-serif;
-        }
+<meta charset="UTF-8">
+<title>Messenger Clone</title>
 
-        .container {
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            border-left: 1px solid #ccc;
-            border-right: 1px solid #ccc;
-            background: white;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+}
 
-        .header {
-            padding: 15px;
-            background: #0084ff;
-            color: white;
-            font-size: 20px;
-        }
-        #chatBox {
-            flex: 1;
-            overflow-y: auto;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .input-row {
-            display: flex;
-            padding: 10px;
-            border-top: 1px solid #ccc;
-            background: #fafafa;
-        }
+.app {
+    display: flex;
+    height: 100vh;
+}
 
-        #Input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            outline: none;
-        }
+.sidebar {
+    width: 280px;
+    background: white;
+    border-right: 1px solid #ccc;
+}
 
-        .button {
-            margin-left: 10px;
-            padding: 10px 18px;
-            background: #0084ff;
-            color: white;
-            border: none;
-            border-radius: 20px;
-        }
+.sidebar h2 {
+    padding: 15px;
+    margin: 0;
+    background: #0084ff;
+    color: white;
+}
 
-        .message {
-            align-self: flex-end;
-            padding: 10px 14px;
-            background: #0084ff;
-            color: white;
-            border-radius: 18px;
-        }
-    </style>
+.person {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.person:hover {
+    background: #f0f2f5;
+}
+
+.person img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: #0084ff;
+    color: white;
+}
+
+.chat-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#chatBox {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 70%;
+    padding: 10px 14px;
+    border-radius: 18px;
+}
+
+.sent {
+    align-self: flex-end;
+    background: #0084ff;
+    color: white;
+}
+
+.received {
+    align-self: flex-start;
+    background: #e4e6eb;
+    color: black;
+}
+
+/* Input */
+.input-row {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+#Input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-left: 10px;
+    padding: 10px 18px;
+    background: #0084ff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="header">Tennger</div>
+
+<div class="app">
+
+    <div class="sidebar">
+        <h2>People</h2>
+
+        <div class="person" onclick="openChat('Bat')">
+            <img src="https://i.pravatar.cc/40?img=1">
+            <span>Bat</span>
+        </div>
+
+        <div class="person">
+            <img src="https://i.pravatar.cc/40?img=2">
+            <span>Sara</span>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <img id="chatPic" src="https://i.pravatar.cc/40?img=1">
+            <span id="chatName">Bat</span>
+        </div>
 
         <div id="chatBox"></div>
 
         <div class="input-row">
-            <input id="Input" placeholder="Type here!" />
-            <button class="button" onclick="messyavuulh()">Send</button>
+            <input id="Input" placeholder="yuma bichne uu" />
+            <button onclick="sendMessage()">Send</button>
         </div>
     </div>
 
-    <script>
-        function messyavuulh() {
-            const input = document.getElementById('Input');
-            const text = input.value.trim();
-            if (!text) return;
+</div>
 
-            const chat = document.getElementById('chatBox');
+<script>
+function sendMessage() {
+    const input = document.getElementById("Input");
+    const text = input.value.trim();
+    if (!text) return;
 
-            const bubble = document.createElement('div');
-            bubble.className = 'message';
-            bubble.textContent = text;
+    const msg = document.createElement("div");
+    msg.className = "message sent";
+    msg.textContent = text;
 
-            chat.appendChild(bubble);
+    document.getElementById("chatBox").appendChild(msg);
+    input.value = "";
+}
 
-            input.value = '';
-            input.focus();
-        }
-    </script>
+
+</script>
+
 </body>
 </html>
